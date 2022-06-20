@@ -1,0 +1,9 @@
+FROM alpine:latest
+
+ADD /shell/rootfs /
+RUN chmod +x /entry.sh && \
+    apk update && \
+    apk add curl ca-certificates && \
+    rm -rf /var/cache/apk/*
+
+ENTRYPOINT /entry.sh
