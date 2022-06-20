@@ -11,6 +11,7 @@ steps:
         from_secret: DOCKER_PASSWORD
       repo: jerheij/drone-shell
       no_cache: true
+      dockerfile: Dockerfile.shell
       tags: latest
     when:
       event:
