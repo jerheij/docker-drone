@@ -3,7 +3,7 @@ FROM alpine:latest
 COPY rootfs /
 RUN chmod +x /entry.sh && \
     apk update && \
-    apk add curl ca-certificates && \
+    apk add curl ca-certificates jq && \
     rm -rf /var/cache/apk/*
 
 ENTRYPOINT /entry.sh
