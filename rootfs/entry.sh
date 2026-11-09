@@ -1,6 +1,7 @@
 #!/bin/ash
 
-echo "ENTRY START: build=${DRONE_BUILD_NUMBER}, pid=$$"
-echo "COMMAND START"
+/bin/ash -o pipefail -c "$PLUGIN_CMD"
+RESULT=$?
 
-exec /bin/ash -c "$PLUGIN_CMD"
+echo "Command exited with status: $RESULT"
+exit "$RESULT"
